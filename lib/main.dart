@@ -1,4 +1,5 @@
 import 'package:beta_nation/pages/register_one.dart';
+import 'package:beta_nation/pages/register_two.dart';
 import 'package:beta_nation/pages/sign_in_screen.dart';
 import 'package:beta_nation/pages/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +23,7 @@ return ScreenUtilInit(builder: (context,_){
 
       primarySwatch: Colors.blue,
     ),
-    home:RegisterOne()
+    home:RegisterTwo()
   );
   
 },designSize: Size(414, 897.95),);
