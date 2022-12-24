@@ -35,7 +35,7 @@ child: Column(
     SizedBox(height: 48.h,),
     Align(
         alignment: Alignment.center,
-        child: ButtonContainerWidget(text: 'Sign in', color: AppColors.green)),
+        child: ButtonContainerWidget(  color: AppColors.green, widget: Text('Sign in',style: TextDimensions.style18500white,),)),
     SizedBox(height: 24.12.h,),
     Row(
 mainAxisAlignment: MainAxisAlignment.center,

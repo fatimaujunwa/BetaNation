@@ -98,9 +98,9 @@ class SplashScreen extends StatelessWidget {
                       margin: EdgeInsets.only(left: 16.w,),
                       child: Row(
                         children: [
-                          ButtonContainerWidget(text: 'Sign in', color: AppColors.green,),
+                          ButtonContainerWidget( color: AppColors.green, widget: Text('Sign in',style: TextDimensions.style18500white,),),
                           SizedBox(width: 8.w,),
-                          ButtonContainerWidget(text: 'Register', color: AppColors.grey,),
+                          ButtonContainerWidget( color: AppColors.grey, widget: Text('Register',style: TextDimensions.style18500white,),),
                         ],
                       ),
                     ),

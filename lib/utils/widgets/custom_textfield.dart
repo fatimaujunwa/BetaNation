@@ -14,7 +14,8 @@ class CustomTextField extends StatelessWidget {
   final String text;
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return
+      TextField(
       controller: controller,
       style: TextDimensions.style16400Black,
       decoration: InputDecoration(

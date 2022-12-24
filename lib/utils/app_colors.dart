@@ -10,6 +10,6 @@ class AppColors{
   static final  offWhiteTwo=Color(0xffF4F4F4);
   static final  textColorWhite=Color(0xffFfFfFf);
   static final red=Color(0xffA42126);
-
+static final cameraIcon=Color(0xffE3E3E3);
 
 }
