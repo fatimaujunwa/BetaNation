@@ -107,10 +107,10 @@ class VotingScreenTwo extends StatelessWidget {
 
                 ),
               ),
-              SizedBox(height: 18.h,),
+              SizedBox(height: 18.0.h,),
               Container(
-                height: 44.h,
-                  width: 187.w,
+                height: 44.0.h,
+                  width: 187.0.w,
                   alignment:Alignment.centerLeft,
                   child: Text('ALMUSTAPHA HAMZA',style: TextDimensions.style18400grey,)),
               SizedBox(height: 38.h,),
