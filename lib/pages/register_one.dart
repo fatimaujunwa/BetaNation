@@ -9,7 +9,8 @@ class RegisterOne extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:Column(children: [
+      body:
+      Column(children: [
         Container(height: 212.74.h,width: 414.w,
         child: Stack(
           alignment: Alignment.center,

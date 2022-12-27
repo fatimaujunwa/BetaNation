@@ -50,6 +50,9 @@ class TextDimensions{
   static final style24500green=GoogleFonts.inter(
 
       fontWeight: FontWeight.w500,fontSize: 24.sp,color: AppColors.green);
+  static final style24500black=GoogleFonts.inter(
+
+      fontWeight: FontWeight.w500,fontSize: 24.sp,color: AppColors.black);
 
   static final style16500red=GoogleFonts.inter(
 

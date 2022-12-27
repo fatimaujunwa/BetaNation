@@ -1,3 +1,5 @@
+import 'package:beta_nation/pages/bio_data_two.dart';
+import 'package:beta_nation/pages/profile_screen.dart';
 import 'package:beta_nation/pages/register_one.dart';
 import 'package:beta_nation/pages/register_two.dart';
 import 'package:beta_nation/pages/scrolled_screen.dart';
@@ -26,7 +28,7 @@ return ScreenUtilInit(builder: (context,_){
 
       primarySwatch: Colors.blue,
     ),
-    home:VotingScreenTwo()
+    home:BioDataScreenTwo()
   );
   
 },designSize: Size(414, 897.95),);
