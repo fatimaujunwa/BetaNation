@@ -1,10 +1,12 @@
 import 'package:beta_nation/pages/bio_data_two.dart';
+import 'package:beta_nation/pages/change_password.dart';
 import 'package:beta_nation/pages/profile_screen.dart';
 import 'package:beta_nation/pages/register_one.dart';
 import 'package:beta_nation/pages/register_two.dart';
 import 'package:beta_nation/pages/scrolled_screen.dart';
 import 'package:beta_nation/pages/sign_in_screen.dart';
 import 'package:beta_nation/pages/splash_screen.dart';
+import 'package:beta_nation/pages/uploaded_document.dart';
 import 'package:beta_nation/pages/voting_screen.dart';
 import 'package:beta_nation/pages/voting_screen_two.dart';
 import 'package:flutter/material.dart';
