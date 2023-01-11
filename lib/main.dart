@@ -1,5 +1,6 @@
 import 'package:beta_nation/pages/bio_data_two.dart';
 import 'package:beta_nation/pages/change_password.dart';
+import 'package:beta_nation/pages/language.dart';
 import 'package:beta_nation/pages/profile_screen.dart';
 import 'package:beta_nation/pages/register_one.dart';
 import 'package:beta_nation/pages/register_two.dart';
@@ -9,8 +10,10 @@ import 'package:beta_nation/pages/splash_screen.dart';
 import 'package:beta_nation/pages/uploaded_document.dart';
 import 'package:beta_nation/pages/voting_screen.dart';
 import 'package:beta_nation/pages/voting_screen_two.dart';
+import 'package:beta_nation/utils/locale_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,14 +26,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 return ScreenUtilInit(builder: (context,_){
-  return MaterialApp(
+  return GetMaterialApp(
+    translations: LocalString(),
+    locale: Locale('en','GB'),
     debugShowCheckedModeBanner: false,
     title: 'Flutter Demo',
     theme: ThemeData(
 
       primarySwatch: Colors.blue,
     ),
-    home:BioDataScreenTwo()
+    home:Language()
   );
   
 },designSize: Size(414, 897.95),);

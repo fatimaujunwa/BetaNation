@@ -15,7 +15,8 @@ class RegisterTwo extends StatelessWidget {
     TextEditingController no=TextEditingController();
     TextEditingController password= TextEditingController();
     TextEditingController cPassword= TextEditingController();
-    return Scaffold(
+    return
+      Scaffold(
       body:Column(children: [
         Container(height: 142.25.h,width: 414.w,
           child: Stack(
@@ -138,6 +139,6 @@ class RegisterTwo extends StatelessWidget {
         )
       ],) ,
 
-    );;
+    );
   }
 }
