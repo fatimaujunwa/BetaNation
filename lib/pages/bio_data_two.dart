@@ -101,7 +101,7 @@ class BioDataScreenTwo extends StatelessWidget {
                             Icon(Icons.camera_alt,size: 21.88.h,color: AppColors.white,),
                             SizedBox(width: 8.w,),
                             Text('Change Photo',style:TextDimensions.style18500white ,)
-                          ],))
+                          ],), tap: () {  },)
 
                       ],
                     ),
@@ -151,7 +151,7 @@ class BioDataScreenTwo extends StatelessWidget {
                         SizedBox(width: 8.w,),
                         Text('Previous',style: TextDimensions.style18500white,)
 
-                      ],)),
+                      ],), tap: () {  },),
                     SizedBox(width: 8.w,),
 
                     ButtonContainerWidget(color: AppColors.offwhite, widget: Row(
@@ -162,7 +162,7 @@ class BioDataScreenTwo extends StatelessWidget {
                         SizedBox(width: 8.w,),
                         Icon(Icons.arrow_forward_ios,size: 15.h,color: AppColors.black,),
 
-                      ],)),
+                      ],), tap: () {  },),
 
                   ],
                 ),

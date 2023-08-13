@@ -26,6 +26,10 @@ class TextDimensions{
 
       fontWeight: FontWeight.w500,fontSize: 15.sp,color: AppColors.black);
 
+  static final style15500white=GoogleFonts.inter(
+
+      fontWeight: FontWeight.w500,fontSize: 15.sp,color: AppColors.white);
+
   static final style16500greyOpacity=GoogleFonts.inter(
 
       fontWeight: FontWeight.w500,fontSize: 16.sp,color: AppColors.grey.withOpacity(0.5));

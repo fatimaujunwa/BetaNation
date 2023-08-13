@@ -3,12 +3,24 @@ import 'package:beta_nation/utils/widgets/button_widget.dart';
 import 'package:beta_nation/utils/widgets/custom_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
+import '../helper/routing.dart';
 import '../utils/app_colors.dart';
-
-class RegisterTwo extends StatelessWidget {
+enum Switch{
+  next,
+  prev,
+  none
+}
+class RegisterTwo extends StatefulWidget {
   const RegisterTwo({Key? key}) : super(key: key);
 
+  @override
+  State<RegisterTwo> createState() => _RegisterTwoState();
+}
+
+class _RegisterTwoState extends State<RegisterTwo> {
+  Switch _switch=Switch.none;
   @override
   Widget build(BuildContext context) {
     TextEditingController nin=TextEditingController();
@@ -68,7 +80,7 @@ class RegisterTwo extends StatelessWidget {
 
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Register',style: TextDimensions.style36600grey,),
+            Text('register'.tr,style: TextDimensions.style36600grey,),
             SizedBox(height: 31.63.h,),
             Row(
               children: [
@@ -87,41 +99,57 @@ class RegisterTwo extends StatelessWidget {
                   children: [
                   Icon(Icons.camera_alt,size: 21.88.h,color: AppColors.white,),
                     SizedBox(width: 8.w,),
-                  Text('Take Photo',style:TextDimensions.style18500white ,)
-                ],))
+                  Text('take photo'.tr,style:TextDimensions.style18500white ,)
+                ],), tap: () {  },)
 
               ],
             ),
             SizedBox(height: 16.h,),
-            CustomTextField(text: 'NIN Number', controller: nin),
+            CustomTextField(text: 'NIN Number'.tr, controller: nin),
             SizedBox(height: 16.h,),
-            CustomTextField(text: 'Mobile Number', controller: no),
+            CustomTextField(text: 'mobile'.tr, controller: no),
             SizedBox(height: 16.h,),
             CustomTextField(text: 'Password', controller: password),
             SizedBox(height: 16.h,),
-            CustomTextField(text: 'Confirm password', controller: cPassword),
+            CustomTextField(text: 'confirm pass'.tr, controller: cPassword),
             SizedBox(height: 24.h,),
             Row(
               children: [
-                ButtonContainerWidget(color: AppColors.green, widget: Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+                ButtonContainerWidget(color:_switch==Switch.prev?AppColors.green: AppColors.offwhite, widget: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(Icons.arrow_back_ios,size: 15.h,color: AppColors.white,),
+                    Icon(Icons.arrow_back_ios,size: 15.h,color: _switch==Switch.prev?AppColors.white: AppColors.black,),
                     SizedBox(width: 8.w,),
-                    Text('Previous',style: TextDimensions.style18500white,)
+                    Text('prev'.tr,style:_switch==Switch.prev? TextDimensions.style18500white:TextDimensions.style18500black,)
 
-                ],)),
+                  ],), tap: () {
+                  setState(() {
+                    _switch=Switch.prev;
+
+                  });
+                  Future.delayed(Duration(seconds: 2));
+                  Get.back();
+                },),
                 SizedBox(width: 8.w,),
 
-                ButtonContainerWidget(color: AppColors.green, widget: Row(
+                ButtonContainerWidget(color:_switch==Switch.next?AppColors.green: AppColors.offwhite, widget: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
 
-                    Text('Next',style: TextDimensions.style18500white,),
-                  SizedBox(width: 8.w,),
-                    Icon(Icons.arrow_forward_ios,size: 15.h,color: AppColors.white,),
+                    Text('next'.tr,style:_switch==Switch.next? TextDimensions.style18500white:TextDimensions.style18500black,),
+                    SizedBox(width: 8.w,),
+                    Icon(Icons.arrow_forward_ios,size: 15.h,color: _switch==Switch.next?AppColors.white: AppColors.black,),
 
-                  ],)),
+                  ],), tap: () {
+
+                  setState(() {
+                    _switch=Switch.next;
+
+                  });
+                  Future.delayed(Duration(seconds: 3));
+                  Get.toNamed(RouteHelper.registerThree);
+                },),
+
 
               ],
             ),
@@ -129,13 +157,13 @@ class RegisterTwo extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('You have an account? ',style: TextDimensions.style18500black,),
-                Text('Sign in',style: TextDimensions.style18400green,),
+                Text('have acc'.tr,style: TextDimensions.style18500black,),
+                Text('sign_in'.tr,style: TextDimensions.style18400green,),
               ],
             )
           ],
         ),
-        
+
         )
       ],) ,
 

@@ -41,6 +41,8 @@ dependencies:
   iconly:
   dropdown_button2:
   get:
+  equatable: ^2.0.5
+  bloc: ^8.1.1
 
 dev_dependencies:
   flutter_test:

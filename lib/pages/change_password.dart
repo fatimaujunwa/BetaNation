@@ -88,7 +88,7 @@ class ChangePassword extends StatelessWidget {
                 SizedBox(height: 8.h,),
                 CustomTextField(text: 'Confirm New Password', controller: cNewPassword)
                 ,SizedBox(height: 40.h,),
-                ButtonContainerWidget(color: AppColors.green, widget: Text('Submit',style: TextDimensions.style18500white,),)
+                ButtonContainerWidget(color: AppColors.green, widget: Text('Submit',style: TextDimensions.style18500white,), tap: () {  },)
               ],),
           )
 

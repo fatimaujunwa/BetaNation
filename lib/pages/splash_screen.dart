@@ -1,16 +1,31 @@
 import 'dart:ui';
 
+import 'package:beta_nation/helper/routing.dart';
 import 'package:beta_nation/utils/app_colors.dart';
 import 'package:beta_nation/utils/text_dimensions.dart';
 import 'package:beta_nation/utils/widgets/button_widget.dart';
+import 'package:beta_nation/utils/widgets/modal_bottom_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
 
   @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    ModalBottom().create(context);
+  }
+  @override
   Widget build(BuildContext context) {
+
     return
       Scaffold(
         body: Stack(
@@ -80,27 +95,36 @@ class SplashScreen extends StatelessWidget {
                     ),
                     child: Column(
                       children: [
-                        Text("""Let’s build a nation we would all look back at and be proud to be part of. 
-
-                   """,style: TextDimensions.style18400grey,),
-                        Row(
-                          children: [
-                            Text('It all starts from',style: TextDimensions.style18400grey,),
-                            // Image.asset('images/Rectangle 10.png',height: 40.h,width: 50.w,)
-                          ],
-                        )
+                        Text(
+                          'splash_screen'.tr,
+                   //        """Let’s build a nation we would all look back at and be proud to be part of.
+                   //
+                   // """,
+                          style: TextDimensions.style18400grey,),
+                        // Row(
+                        //   children: [
+                        //     Text('It all starts from',style: TextDimensions.style18400grey,),
+                        //     // Image.asset('images/Rectangle 10.png',height: 40.h,width: 50.w,)
+                        //   ],
+                        // )
                       ],
                     )
-                    
+
                     ),
                     SizedBox(height:18.27.h ,),
                     Container(
                       margin: EdgeInsets.only(left: 16.w,),
                       child: Row(
                         children: [
-                          ButtonContainerWidget( color: AppColors.green, widget: Text('Sign in',style: TextDimensions.style18500white,),),
+                          ButtonContainerWidget( color: AppColors.green, widget: Text('sign_in'.tr,style: TextDimensions.style18500white,), tap: () {
+                            Get.toNamed(RouteHelper.signIn);
+
+                          },),
                           SizedBox(width: 8.w,),
-                          ButtonContainerWidget( color: AppColors.grey, widget: Text('Register',style: TextDimensions.style18500white,),),
+                          ButtonContainerWidget( color: AppColors.grey, widget: Text('register'.tr,style: TextDimensions.style18500white,), tap: () {
+                            Get.toNamed(RouteHelper.registerOne);
+
+                          },),
                         ],
                       ),
                     ),

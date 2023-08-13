@@ -2,11 +2,18 @@ import 'package:beta_nation/utils/widgets/custom_textfield.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
+import '../helper/routing.dart';
 import '../utils/app_colors.dart';
 import '../utils/text_dimensions.dart';
 import '../utils/widgets/button_widget.dart';
-
+enum Switch{
+  next,
+prev,
+  none
+}
 class RegisterOne extends StatefulWidget {
   const RegisterOne({Key? key}) : super(key: key);
 
@@ -15,6 +22,7 @@ class RegisterOne extends StatefulWidget {
 }
 
 class _RegisterOneState extends State<RegisterOne> {
+  Switch _switch=Switch.none;
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +45,8 @@ class _RegisterOneState extends State<RegisterOne> {
     TextEditingController lga= TextEditingController();
     return
       Scaffold(
-        body:Column(children: [
+        body:
+        Column(children: [
           Container(height: 142.25.h,width: 414.w,
             child: Stack(
               alignment: Alignment.center,
@@ -88,7 +97,7 @@ class _RegisterOneState extends State<RegisterOne> {
 
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Register',style: TextDimensions.style36600grey,),
+                Text('register'.tr,style: TextDimensions.style36600grey,),
                 SizedBox(height: 31.63.h,),
 
                 Row(children: [
@@ -136,11 +145,11 @@ class _RegisterOneState extends State<RegisterOne> {
 
                   ),
                   SizedBox(width: 8.w,),
-                  CustomTextField(text: 'First name', controller: fname,width: 187,)
+                  CustomTextField(text: 'first name'.tr, controller: fname,width: 187,)
                 ],),
                 SizedBox(height: 16.h,),
                 Row(children: [
-                  CustomTextField(text: 'Last name', controller: lname,width: 187,),
+                  CustomTextField(text: 'last name'.tr, controller: lname,width: 187,),
                   SizedBox(width: 8.w,),
                   CustomTextField(text: 'Maiden name', controller: maidenName,width: 187,)
                 ],),
@@ -327,25 +336,40 @@ class _RegisterOneState extends State<RegisterOne> {
                 SizedBox(height: 68.h,),
                 Row(
                   children: [
-                    ButtonContainerWidget(color: AppColors.offwhite, widget: Row(
+                    ButtonContainerWidget(color:_switch==Switch.prev?AppColors.green: AppColors.offwhite, widget: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(Icons.arrow_back_ios,size: 15.h,color: AppColors.black,),
+                        Icon(Icons.arrow_back_ios,size: 15.h,color: _switch==Switch.prev?AppColors.white: AppColors.black,),
                         SizedBox(width: 8.w,),
-                        Text('Previous',style: TextDimensions.style18500black,)
+                        Text('prev'.tr,style:_switch==Switch.prev? TextDimensions.style18500white:TextDimensions.style18500black,)
 
-                      ],)),
+                      ],), tap: () {
+                      setState(() {
+                        _switch=Switch.prev;
+
+                      });
+                      Future.delayed(Duration(seconds: 2));
+                      Get.back();
+                    },),
                     SizedBox(width: 8.w,),
 
-                    ButtonContainerWidget(color: AppColors.green, widget: Row(
+                    ButtonContainerWidget(color:_switch==Switch.next?AppColors.green: AppColors.offwhite, widget: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
 
-                        Text('Next',style: TextDimensions.style18500white,),
+                        Text('next'.tr,style:_switch==Switch.next? TextDimensions.style18500white:TextDimensions.style18500black,),
                         SizedBox(width: 8.w,),
-                        Icon(Icons.arrow_forward_ios,size: 15.h,color: AppColors.white,),
+                        Icon(Icons.arrow_forward_ios,size: 15.h,color: _switch==Switch.next?AppColors.white: AppColors.black,),
 
-                      ],)),
+                      ],), tap: () {
+
+            setState(() {
+              _switch=Switch.next;
+
+            });
+            Future.delayed(Duration(seconds: 3));
+            Get.toNamed(RouteHelper.registerTwo);
+          },),
 
 
                   ],
@@ -354,8 +378,8 @@ class _RegisterOneState extends State<RegisterOne> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('You have an account? ',style: TextDimensions.style18500black,),
-                    Text('Sign in',style: TextDimensions.style18400green,),
+                    Text('have acc'.tr,style: TextDimensions.style18500black,),
+                    Text('sign_in'.tr,style: TextDimensions.style18400green,),
                   ],
                 )
 
