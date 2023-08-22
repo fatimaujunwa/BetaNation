@@ -1,6 +1,6 @@
 part of 'login_bloc.dart';
 
-abstract class LoginEvent extends Equatable {
+class LoginEvent extends Equatable {
   final String? nin;
   final String? password;
 

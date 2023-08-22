@@ -1,4 +1,3 @@
-import 'dart:html';
 
 class BetaNationException {
 final String? message;

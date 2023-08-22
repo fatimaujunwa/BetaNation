@@ -13,6 +13,7 @@ import 'package:beta_nation/pages/splash_screen.dart';
 import 'package:beta_nation/pages/uploaded_document.dart';
 import 'package:beta_nation/pages/voting_screen.dart';
 import 'package:beta_nation/pages/voting_screen_two.dart';
+import 'package:beta_nation/utils/app.dart';
 import 'package:beta_nation/utils/locale_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -36,22 +37,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-return ScreenUtilInit(builder: (context,_){
-  return GetMaterialApp(
-    translations: LocalString(),
-    locale: Locale('en','GB'),
-    debugShowCheckedModeBanner: false,
-    title: 'Flutter Demo',
-    theme: ThemeData(
-
-      primarySwatch: Colors.blue,
-    ),
-    // home:CustomBottomNavBar(),
-    getPages: RouteHelper.routes,
-    initialRoute: RouteHelper.getInitial(),
-  );
-  
-},designSize: Size(414, 897.95),);
+return App();
   }
 }
 

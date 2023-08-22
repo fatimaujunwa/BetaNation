@@ -28,6 +28,15 @@ abstract class ApiState<T> extends Equatable {
     return copyWith(isLoading$: true, isSuccess$: false, data$: this.data);
   }
 
+   ApiState<T> failed(BetaNationException error) {
+    return copyWith(
+      data$: this.data ?? null,
+      error$: error,
+      isLoading$: false,
+      isSuccess$: false,
+    );
+  }
+
   ApiState<T> stopLoading() {
     return copyWith(data$: data, isLoading$: false, isSuccess$: false);
   }

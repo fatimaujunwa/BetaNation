@@ -43,6 +43,10 @@ dependencies:
   get:
   equatable: ^2.0.5
   bloc: ^8.1.1
+  http: ^0.13.5
+  dio: ^5.1.1
+  connectivity: ^3.0.6
+  flutter_bloc: ^8.1.3
 
 dev_dependencies:
   flutter_test:

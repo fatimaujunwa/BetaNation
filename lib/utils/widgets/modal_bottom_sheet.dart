@@ -1,3 +1,4 @@
+import 'package:beta_nation/utils/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -19,11 +20,11 @@ class ModalBottom{
       'name':'Ásụ̀sụ́ Ìgbò','locale':Locale('ig','NG')
     }
   ];
-  updateLanguage(Locale locale){
-    Get.back();
-    Get.updateLocale(locale);
+  // updateLanguage(Locale locale){
+  //   Get.back();
+  //   Get.updateLocale(locale);
 
-  }
+  // }
 
   Future  create(BuildContext context) async {
     SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
@@ -48,7 +49,7 @@ class ModalBottom{
                   return  GestureDetector(
 
                     onTap: (){
-                      updateLanguage(locale[i]['locale']);
+                     Navigator.pushNamed(context, router.login);
 
                     },
                     child: Container(

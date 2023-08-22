@@ -117,12 +117,12 @@ class _SplashScreenState extends State<SplashScreen> {
                       child: Row(
                         children: [
                           ButtonContainerWidget( color: AppColors.green, widget: Text('sign_in'.tr,style: TextDimensions.style18500white,), tap: () {
-                            Get.toNamed(RouteHelper.signIn);
+                            
 
                           },),
                           SizedBox(width: 8.w,),
                           ButtonContainerWidget( color: AppColors.grey, widget: Text('register'.tr,style: TextDimensions.style18500white,), tap: () {
-                            Get.toNamed(RouteHelper.registerOne);
+                            // Get.toNamed(RouteHelper.registerOne);
 
                           },),
                         ],
