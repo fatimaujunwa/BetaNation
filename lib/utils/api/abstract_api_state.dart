@@ -14,6 +14,9 @@ abstract class ApiState<T> extends Equatable {
   final bool? isLoading;
   final BetaNationApiResponse? sucess;
 
+  bool get hasData => this.data != null;
+  bool get hasError => this.error != null;
+
   const ApiState({
     this.data,
     required this.isEmpty,
@@ -28,7 +31,7 @@ abstract class ApiState<T> extends Equatable {
     return copyWith(isLoading$: true, isSuccess$: false, data$: this.data);
   }
 
-   ApiState<T> failed(BetaNationException error) {
+  ApiState<T> failed(BetaNationException error) {
     return copyWith(
       data$: this.data ?? null,
       error$: error,

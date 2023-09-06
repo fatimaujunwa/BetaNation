@@ -18,9 +18,11 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       Future.delayed(Duration.zero);
       try {
 
-        final data = _respositories.login(event.nin!, event.password!);
+        final data = await _respositories.login(event.nin!, event.password!);
         emit(state.success(data) as LoginState);
+       
       }  on BetaNationException catch (error) {
+          
         emit(state.failed(error) as LoginState);
         
       }
